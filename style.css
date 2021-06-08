@@ -1,0 +1,117 @@
+:root {
+  --clr-bright-orange: hsl(31, 77%, 52%);
+  --clr-dark-cyan: hsl(184, 100%, 22%);
+  --clr-very-dark-cyan: hsl(179, 100%, 13%);
+  --clr-transparent-white: hsla(0, 0%, 100%, 0.75);
+  --clr-very-light-gray: hsl(0, 0%, 95%);
+  --fnt-text: "Lexend Deca";
+  --fnt-text-weight: 400;
+  --fnt-title: "Big Shoulders Display";
+  --fnt-title-weight: 700;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  font-family: var(--fnt-text);
+  font-weight: var(--fnt-text-weight);
+}
+
+.mainDiv {
+  width: 750px;
+  margin: 50px auto;
+  border-radius: 10px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "sedan suv luxury";
+}
+
+@media only screen and (max-width: 770px) {
+  .mainDiv {
+    width: 300px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 0.5fr 1fr;
+    grid-template-areas: "sedan" "suv" "luxury";
+  }
+}
+
+.card {
+  padding: 45px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.card-title {
+  font-family: var(--fnt-title-weight);
+  font-size: 30px;
+  font-weight: var(--fnt-title-weight);
+  color: var(--clr-very-light-gray);
+}
+
+.card-text {
+  font-size: 15px;
+  color: var(--clr-transparent-white);
+  flex: 1;
+}
+
+.sedanCard {
+  background-color: var(--clr-bright-orange);
+  grid-area: sedan;
+}
+
+.suvCard {
+  background-color: var(--clr-dark-cyan);
+  grid-area: suv;
+}
+
+.luxuryCard {
+  background-color: var(--clr-very-dark-cyan);
+  grid-area: luxury;
+}
+
+.sedanCard .card-button {
+  color: var(--clr-bright-orange);
+}
+
+.suvCard .card-button {
+  color: var(--clr-dark-cyan);
+}
+
+.luxuryCard .card-button {
+  color: var(--clr-very-dark-cyan);
+}
+
+.card-button {
+  border: 2px solid white;
+  width: 160px;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 50px;
+  border-color: transparent;
+  letter-spacing: 1.1px;
+}
+
+.card-button:hover {
+  background-color: transparent;
+  border: 2px solid white;
+  color: var(--clr-transparent-white);
+  cursor: pointer;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  padding: 10px;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
